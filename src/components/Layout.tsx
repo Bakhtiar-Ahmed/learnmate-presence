@@ -25,10 +25,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-education-50 flex">
       {/* Desktop Sidebar */}
-      <div className="hidden md:flex flex-col w-64 bg-education-800 text-white">
-        <div className="p-4 border-b border-education-700">
+      <div className="hidden md:flex flex-col w-64 bg-education-500 text-white">
+        <div className="p-4 border-b border-education-600">
           <h1 className="text-2xl font-bold">Class Attendance</h1>
         </div>
         <nav className="flex-1 overflow-y-auto py-4">
@@ -39,8 +39,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   to={item.path}
                   className={`flex items-center px-4 py-3 ${
                     location.pathname === item.path
-                      ? "bg-education-700 border-l-4 border-education-300"
-                      : "hover:bg-education-700"
+                      ? "bg-education-600 border-l-4 border-education-300"
+                      : "hover:bg-education-400"
                   }`}
                 >
                   {item.icon}
@@ -50,7 +50,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             ))}
           </ul>
         </nav>
-        <div className="p-4 border-t border-education-700">
+        <div className="p-4 border-t border-education-600">
           <button className="flex items-center w-full text-education-100 hover:text-white">
             <LogOut className="h-5 w-5" />
             <span className="ml-3">Logout</span>
@@ -59,7 +59,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       </div>
 
       {/* Mobile Menu Button */}
-      <div className="md:hidden fixed top-0 left-0 right-0 bg-education-800 text-white z-10 flex justify-between items-center p-4">
+      <div className="md:hidden fixed top-0 left-0 right-0 bg-education-500 text-white z-10 flex justify-between items-center p-4">
         <h1 className="text-xl font-bold">Class Attendance</h1>
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -71,7 +71,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed top-16 left-0 right-0 bg-education-800 text-white z-10">
+        <div className="md:hidden fixed top-16 left-0 right-0 bg-education-500 text-white z-10">
           <nav className="py-2">
             <ul className="space-y-1">
               {navItems.map((item) => (
@@ -80,8 +80,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     to={item.path}
                     className={`flex items-center px-4 py-3 ${
                       location.pathname === item.path
-                        ? "bg-education-700 border-l-4 border-education-300"
-                        : "hover:bg-education-700"
+                        ? "bg-education-600 border-l-4 border-education-300"
+                        : "hover:bg-education-400"
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -91,7 +91,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 </li>
               ))}
               <li>
-                <button className="flex items-center w-full px-4 py-3 text-education-100 hover:text-white hover:bg-education-700">
+                <button className="flex items-center w-full px-4 py-3 text-education-100 hover:text-white hover:bg-education-400">
                   <LogOut className="h-5 w-5" />
                   <span className="ml-3">Logout</span>
                 </button>
